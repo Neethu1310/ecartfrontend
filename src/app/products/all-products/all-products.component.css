@@ -1,0 +1,21 @@
+.card{
+    width: 280px;
+    height: 600px;
+    background-color:darkgray;
+ }
+
+.card:hover{
+box-shadow: 2px 3px 5px 4px darkgray;
+}
+
+.card-img-top{
+    width: 100%;
+    height: 250px;
+    padding: 20px;
+    transition: 2s;
+}
+
+.card-img-top:hover{
+    transform: scale(1.1);
+    transition: 3s;
+}

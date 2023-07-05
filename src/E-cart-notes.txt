@@ -1,0 +1,59 @@
+                                            E-cart frontend
+                                         --------------------
+
+                            1. Create a folder ECART
+                            2.Inside  that create an angular application  - ng new e-cart-frontend
+                            3. cd e-cart-frontend
+                            4. code .
+                            5.  Run angular application - ng s -o      
+                            6. clear code in app.component.html
+                            7. Import 3rd party libraries
+                                   ->bootstrap(index.html)
+                                   ->font-awesome(index.html)
+                                   ->google fonts(style.css)       
+                            8. LAZZY LOADING
+                                 -Lazy loading helps keep initial bundle sizes smaller, which in turn helps decrease load times.
+                                 -lazy loading is an approach to limit the modules that are loaded to the ones that the user currently needs.
+                                  this can improve your application's performance and reduce the initial bundle size  .
+                              We have one module in our application  - app.module
+                              Here we create another module - 
+                               -> Generate module - ng g m products --route products --module app.module   
+
+                            9. Component generation
+                                 -> ng g c products/allProducts
+                                 -> ng g c products/viewProducts
+                                 -> ng g c products/wishlist
+                                 -> ng g c products/cart
+                                 Not in lazy loading
+                                 -> ng g c header
+                                 -> ng g c footer
+                                 -> ng g c pageNotFound     
+                            10. Setup Path
+                                ->put <router-outlet></router-outlet> in app.component.html
+                                ->products.routing.module.ts         
+
+                            11.  API INTEGRATION
+
+                                   ->import HttpClientModule in app.module.ts
+                                   ->create a services inside product module for api calling 
+                                         - ng g s products/services/api
+                                   ->Inside api.services file,
+                                         -create and use http dependency injection        
+                                         -also create a function for (getallProducts()) fetching all products details
+                                   ->Inside all-products.component file,
+                                          -create and use api dependency injection
+                                          -also create a function for integrating api services
+                                          -get all products details 
+                                   -> Wishlist functionality is completed
+
+                                   ->Product search
+                                       ng g p products/pipes/filter
+                                       
+                                ->Behaviour subjects
+If the data is confined to a single component there is (almost) no need for observables. If the data needs to be shared among multiple 
+components however, it is stored in singleton services. And components have no way of knowing the state of data in the service. 
+So observables are used to tell the components the state of the data has been changed.
+
+
+                                  ->Cart Functionality 
+                                      
